@@ -39,8 +39,8 @@ class CompressStaticfilesStorage(TestCase):
             manifest_json = manifest_file.read()
             manifest_dict = json.loads(manifest_json)
             # Make sure the manifest gets updated correctly.
-            assert manifest_dict['paths']['test/test.css'] == 'test/test.min.af2c7c97286d.css'
-            assert manifest_dict['paths']['test/test.js'] == 'test/test.min.cd7d87ce89fb.js'
+            assert manifest_dict['paths']['test/test.css'] == 'test/test.min.815f6efe5516.css'
+            assert manifest_dict['paths']['test/test.js'] == 'test/test.min.7cf6ab9e3734.js'
 
 
     def test_included_filetypes(self):

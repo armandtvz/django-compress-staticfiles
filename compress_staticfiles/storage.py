@@ -286,7 +286,7 @@ class CompressStaticFilesMixin:
                 )
                 processed = False
                 processed_name = hashed_file_fp
-                if hashed_min_fp and minified_text:
+                if hashed_min_fp and minified_text is not None:
                     source_storage, source_path = paths[os.path.normpath(non_hashed_file)]
                     if self._is_modified_file(source_path, hashed_min_fp, source_storage):
                         self.save(hashed_min_fp, ContentFile(minified_text.encode('utf-8')))
@@ -321,6 +321,8 @@ class CompressStaticFilesMixin:
                             (filepath + '.gz'),
                             source_storage
                         ):
+                            # Files smaller than MINIMUM_SIZE_FOR_COMPRESSION
+                            # will not be skipped because they don't exist
                             self.gzip_compress(filepath)
 
                     if settings.BROTLI_STATIC_COMPRESSION:
@@ -329,6 +331,8 @@ class CompressStaticFilesMixin:
                             (filepath + '.br'),
                             source_storage
                         ):
+                            # Files smaller than MINIMUM_SIZE_FOR_COMPRESSION
+                            # will not be skipped because they don't exist
                             self.brotli_compress(filepath)
 
 

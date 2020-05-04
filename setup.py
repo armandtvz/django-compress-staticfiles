@@ -11,7 +11,7 @@ description = (
 
 setuptools.setup(
     name='django-compress-staticfiles',
-    version='1.0.0-beta',
+    version='1.0.1-beta',
     author='Armandt van Zyl',
     author_email='armandtvz@gmail.com',
     description=description,
