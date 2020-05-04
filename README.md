@@ -57,7 +57,7 @@ Quickstart
 ----------
 Install the app and it's dependencies using:
 ```
-pip install git+https://github.com/armandtvz/django-compress-staticfiles.git
+pip install django-compress-staticfiles
 ```
 
 Set the [STATICFILES_STORAGE][4] setting in your project settings.py as follows:
