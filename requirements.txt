@@ -1,0 +1,6 @@
+Django
+Brotli
+csscompressor
+rjsmin
+flake8
+coverage

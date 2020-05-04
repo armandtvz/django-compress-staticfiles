@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+/test_project
+/test_app
+/static
+gitignore/
+manage.py

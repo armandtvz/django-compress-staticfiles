@@ -1,0 +1,34 @@
+/*! This has to be more than 200 characters; otherwise it won't be compressed.
+    Also, if the minified version is less than 200 characters but the
+    unminified version is not, the minified version will not be compressed.
+*/
+/* A comment */
+h1 {
+    font-size: 100px;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 80px;
+    margin: 10px 0;
+}
+
+h3 {
+    font-size: 60px;
+    margin: 10px 0;
+}
+
+h4 {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+h5 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+h6 {
+    font-size: 15px;
+    margin: 10px 0;
+}
