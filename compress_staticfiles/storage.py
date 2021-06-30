@@ -4,6 +4,7 @@ import copy
 import json
 import gzip
 import brotli
+import re
 from io import BytesIO
 
 from django.contrib.staticfiles.storage import (
@@ -37,9 +38,14 @@ class MinifyFilesMixin:
         Will keep bang/exclamation comments.
         """
         with self.open(path, 'rb') as css_file:
+            re_capture_svg = re.compile(r'url\("(data:image/svg.*?svg%3[Ee])\"\)')
+            css = css_file.read().decode('utf-8')
+            data_urls = re.findall(re_capture_svg, css)
+            for data_url in data_urls:
+                css = css.replace(data_url, data_url.replace(' ', '%20'))
+
             minified_text = compress(
-                css_file.read().decode('utf-8'),
-                preserve_exclamation_comments=True,
+                css, preserve_exclamation_comments=True,
             )
         return minified_text
 
